@@ -14,7 +14,7 @@
             (io/reader))
        wrt (io/writer (str dir-results "/" fparent "/" template-file))]
     (doseq [line (line-seq rdr)]
-      (.write wrt line))))
+      (.write wrt (str line "\n")))))
 
 (defn read-languages
   []
